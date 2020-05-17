@@ -1,0 +1,115 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 6rem 4rem;
+}
+
+.title {
+  &__text {
+    font-weight: 400;
+    font-size: 3.6rem;
+
+    & > span {
+      color: $color-pink;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 14rem;
+
+  .inactive {
+    color: $color-menu-light;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+      color: $color-menu;
+      font-weight: 400;
+      font-size: 2.4rem;
+      text-align: right;
+      cursor: pointer;
+      margin-bottom: 1rem;
+      
+      &.inactive {
+        color: $color-menu-light;
+      }
+    }
+  }
+
+  .key-list {
+    margin-right: 12rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 100%;
+    width: 36rem;
+
+    &.inactive {
+      display: none;
+    }
+
+    .key-letter {
+      color: $color-menu;
+      font-weight: 400;
+      font-size: 2.4rem;
+      text-align: center;
+      cursor: pointer;
+
+      &.inactive {
+        color: $color-menu-light;
+      }
+    }
+  }
+
+  .chord-submenu {
+    display: flex;
+    margin-right: 8rem;
+    flex-direction: column;
+
+    &.inactive {
+      display: none;
+    }
+
+    &__item {
+      color: $color-menu;
+      font-weight: 400;
+      font-size: 2.4rem;
+      text-align: right;
+      cursor: pointer;
+      margin-bottom: 1rem;
+      
+      &.inactive {
+        color: $color-menu-light;
+      }
+    }
+  }
+
+  .chord-list {
+    margin-right: 8rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 100%;
+    width: 36rem;
+
+    &.inactive {
+      display: none;
+    }
+
+    .chord-letter {
+      color: $color-menu;
+      font-weight: 400;
+      font-size: 2.4rem;
+      text-align: center;
+      cursor: pointer;
+
+      &.inactive {
+        color: $color-menu-light;
+      }
+    }
+  }
+}

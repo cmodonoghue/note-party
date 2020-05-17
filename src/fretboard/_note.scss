@@ -1,0 +1,100 @@
+.string {
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid $color-gray-light;
+  position: relative;
+
+  &:last-child, &:nth-last-child(2) {
+    border: none;
+  }
+
+  &:last-child {
+    height: 0;
+  }
+
+  .note {
+    position: absolute;
+    text-align: center;
+    top: -1.8rem;
+    left: 33%;
+    font-size: 1.8rem;
+    line-height: 3.1rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    border: 2px solid black;
+    border-radius: 2rem;
+    
+    &--Ab {
+      border-color: $color-a-flat;
+      color: $color-a-flat;
+      background-color: $color-a-flat-light;
+    }
+
+    &--A {
+      border-color: $color-a;
+      color: $color-a;
+      background-color: $color-a-light;
+    }
+
+    &--Bb {
+      border-color: $color-b-flat;
+      color: $color-b-flat;
+      background-color: $color-b-flat-light;
+    }
+
+    &--B {
+      border-color: $color-b;
+      color: $color-b;
+      background-color: $color-b-light;
+    }
+
+    &--C {
+      border-color: $color-c;
+      color: $color-c;
+      background-color: $color-c-light;
+    }
+
+    &--Db {
+      border-color: $color-d-flat;
+      color: $color-d-flat;
+      background-color: $color-d-flat-light;
+    }
+
+    &--D {
+      border-color: $color-d;
+      color: $color-d;
+      background-color: $color-d-light;
+    }
+
+    &--Eb {
+      border-color: $color-e-flat;
+      color: $color-e-flat;
+      background-color: $color-e-flat-light;
+    }
+
+    &--E {
+      border-color: $color-e;
+      color: $color-e;
+      background-color: $color-e-light;
+    }
+
+    &--F {
+      border-color: $color-f;
+      color: $color-f;
+      background-color: $color-f-light;
+    }
+
+    &--Gb {
+      border-color: $color-g-flat;
+      color: $color-g-flat;
+      background-color: $color-g-flat-light;
+    }
+
+    &--G {
+      border-color: $color-g;
+      color: $color-g;
+      background-color: $color-g-light;
+    }
+
+  }
+}

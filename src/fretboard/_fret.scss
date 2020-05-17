@@ -1,0 +1,13 @@
+.fret {
+  border: 3px solid $color-gray;
+  width: 10rem;
+  height: 24rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  &:not(:last-child) {
+    border-right: none;
+  }
+}

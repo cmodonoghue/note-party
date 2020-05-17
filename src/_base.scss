@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
+
+*,
+*::after,
+*::before  {
+  margin: 0px;
+  padding: 0px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box; 
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+} 
+
+body {
+  font-family: "Rubik";
+  font-weight: 400;
+  padding: 0 6rem;
+  color: #3D3D3D;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+} 
+
+$color-black: #3D3D3D;
+
+$color-gray: #C5CFD8;
+$color-gray-light: #E7EDF2;
+
+$color-pink: #D36DA4;
+
+$color-menu: #4CA0BA;
+$color-menu-dark: #2F728E;
+$color-menu-light: #A1C7C7;
+
+$color-a-flat: #4CA0BA;
+$color-a-flat-light: #F0FBFF;
+
+$color-a: #D29E16;
+$color-a-light: #FFF9EB;
+
+$color-b-flat: #E0956B;
+$color-b-flat-light: #FFF7E8;
+
+$color-b: #9462D3;
+$color-b-light: #FCEDFF;
+
+$color-c: #5E61B2;
+$color-c-light: #EDEEFF;
+
+$color-d-flat: #4AAA88;
+$color-d-flat-light: #E7FFFC;
+
+$color-d: #CD60CF;
+$color-d-light: #FFE9FF;
+
+$color-e-flat: #5BAC77;
+$color-e-flat-light: #EBFFEF;
+
+$color-e: #DD6464;
+$color-e-light: #FFECEC;
+
+$color-f: #D36DA4;
+$color-f-light: #FFF0F8;
+
+$color-g-flat: #7BA149;
+$color-g-flat-light: #F6FFEA;
+
+$color-g: #BD697D;
+$color-g-light: #FFEFF3;
