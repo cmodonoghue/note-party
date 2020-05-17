@@ -5,21 +5,32 @@ import './App.scss';
 import Menu from "./menu/Menu";
 import Fretboard from "./fretboard/Fretboard";
 
+export const CategoryContext = React.createContext();
+export const LetterContext = React.createContext();
+export const TypeContext = React.createContext();
+
 const App = () => {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [chordType, setChordType] = useState("major");
+  const [type, setType] = useState("major");
   const [activeKey, setActiveKey] = useState("");
   const [activeChord, setActiveChord] = useState("");
 
-  const CategoryContext = React.createContext(activeCategory);
-  const category = useContext(CategoryContext);
+  let currentLetter;
+
+  if (activeCategory === 'key') {
+    currentLetter = activeKey; 
+  } else if (activeCategory === 'chord') {
+    currentLetter = activeChord;
+  } else {
+    currentLetter = '';
+  }
 
   const toggleMenu = (selection) => {
     setActiveCategory(selection);
   }
 
   const toggleSubMenu = (selection) => {
-    setChordType(selection);
+    setType(selection);
   }
 
   const selectKey = (selection) => {
@@ -31,25 +42,24 @@ const App = () => {
   }
 
   return (
-    <CategoryContext.Provider>
-      <div>
-        <Menu 
-          onToggleMenu={toggleMenu} 
-          onToggleSubMenu={toggleSubMenu} 
-          onSelectKey={selectKey}
-          onSelectChord={selectChord}
-          activeKey={activeKey}
-          activeChord={activeChord}
-          activeCategory={activeCategory}
-          chordType={chordType}
-        />
-        <Fretboard 
-          activeKey={activeKey}
-          activeChord={activeChord}
-          activeCategory={activeCategory}
-          chordType={chordType}
-        />
-      </div>
+    <CategoryContext.Provider value={activeCategory}>
+      <LetterContext.Provider value={currentLetter}>
+        <TypeContext.Provider value={type}> 
+          <div>
+            <Menu 
+              onToggleMenu={toggleMenu} 
+              onToggleSubMenu={toggleSubMenu} 
+              onSelectKey={selectKey}
+              onSelectChord={selectChord}
+              activeKey={activeKey}
+              activeChord={activeChord}
+              activeCategory={activeCategory}
+              type={type}
+            />
+            <Fretboard />
+          </div>
+        </TypeContext.Provider>  
+      </LetterContext.Provider>  
     </CategoryContext.Provider>
   );
 }

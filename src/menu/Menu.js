@@ -8,13 +8,122 @@ const Menu = ({
   activeKey,
   activeChord,
   activeCategory, 
-  chordType}) => {
+  type}) => {
+
+  let activeLetter = '';
+  let activeCategoryDisplay = '';
+  let activeNotes = [];
+
+  // get correct data to display beneath title
+
+  if (activeCategory === 'key') {
+    activeLetter = activeKey;
+  } else if (activeCategory === 'chord') {
+    activeLetter = activeChord;
+  } else {
+    activeLetter = '';
+  }
+
+  if (activeCategory === 'key') {
+    activeCategoryDisplay = 'SCALE';
+  } else {
+    activeCategoryDisplay = 'CHORD';
+  }
+
+  const keyNotesMajor = {
+    Ab: ["Ab", "Bb", "C", "Db", "Eb", "F", "G"],
+    A: ["A", "B", "C#", "D", "E", "F#", "G#"],
+    Bb: ["Bb", "C", "D", "Eb", "F", "G", "A"],
+    B: ["B", "C#", "D#", "E", "F#", "G#", "A#"],
+    C: ["C", "D", "E", "F", "G", "A", "B"],
+    Db: ["Db", "Eb", "F", "Gb", "Ab", "Bb", "C"],
+    D: ["D", "E", "F#", "G", "A", "B", "C#"],
+    Eb: ["Eb", "F", "G", "Ab", "Bb", "C", "D"],
+    E: ["E", "F#", "G#", "A", "B", "C#", "D#"],
+    F: ["F", "G", "A", "Bb", "C", "D", "E"],
+    Gb: ["F#", "G#", "A#", "B", "C#", "D#", "E#"],
+    G: ["G", "A", "B", "C", "D", "E", "F#"],
+  };
+
+  const keyNotesMinor = {
+    Ab: ["G#", "A#", "B", "C#", "D#", "E", "F#"],
+    A: ["A", "B", "C", "D", "E", "F", "G"],
+    Bb: ["A#", "C", "C#", "D#", "F", "F#", "G#"],
+    B: ["B", "C#", "D", "E", "F#", "G", "A"],
+    C: ["C", "D", "Eb", "F", "G", "Ab", "Bb"],
+    Db: ["C#", "D#", "E", "F#", "G#", "A", "B"],
+    D: ["D", "E", "F", "G", "A", "Bb", "C"],
+    Eb: ["D#", "F", "F#", "G#", "A#", "B", "C#"],
+    E: ["E", "F#", "G", "A", "B", "C", "D"],
+    F: ["F", "G", "Ab", "Bb", "C", "Db", "Eb"],
+    Gb: ["F#", "G#", "A", "B", "C#", "D", "E"],
+    G: ["G", "A", "Bb", "C", "D", "Eb", "F"],
+  };
+
+  const chordNotesMajor = {
+    Ab: ["Ab", "C", "Eb"],
+    A: ["A", "C#", "E"],
+    Bb: ["Bb", "D", "F"],
+    B: ["B", "D#", "F#"],
+    C: ["C", "E", "G"],
+    Db: ["Db", "F", "Ab"],
+    D: ["D", "F#", "A"],
+    Eb: ["Eb", "G", "Bb"],
+    E: ["E", "G#", "B"],
+    F: ["F", "A", "C"],
+    Gb: ["Gb", "Bb", "Db"],
+    G: ["G", "B", "D"],
+  };
+
+  const chordNotesMinor = {
+    Ab: ["Ab", "B", "Eb"],
+    A: ["A", "C", "E"],
+    Bb: ["Bb", "Db", "F"],
+    B: ["B", "D", "F#"],
+    C: ["C", "Eb", "G"],
+    Db: ["C#", "E", "G#"],
+    D: ["D", "F", "A"],
+    Eb: ["Eb", "Gb", "Bb"],
+    E: ["E", "G", "B"],
+    F: ["F", "Ab", "C"],
+    Gb: ["F#", "A", "C#"],
+    G: ["G", "Bb", "D"],
+  };
+
+  // get correct notes to display beneath title
+
+  if (activeCategory === 'key') {
+    if (type === 'major') {
+      activeNotes = keyNotesMajor[activeKey];
+    } else if (type === 'minor') {
+      activeNotes = keyNotesMinor[activeKey];
+    }
+  } else if (activeCategory === 'chord') {
+    if (type === 'major') {
+      activeNotes = chordNotesMajor[activeChord];
+    } else if (type === 'minor') {
+      activeNotes = chordNotesMinor[activeChord];
+    }
+  } else {
+    activeNotes = [];
+  }
   
   return (
     <div className="header">
 
-      <div className="title">
-        <h1 className="title__text"><span>note</span> party</h1>
+      <div className="title-section">
+          <h1 className="title"><span>note</span> party</h1>
+
+          {activeLetter !== '' &&
+            <div>
+              <h2 className="display">
+                {activeLetter} <span>{type}</span> {activeCategoryDisplay}
+              </h2>
+
+              <h3 className="notes-display">({activeNotes.join(', ')})</h3>
+            </div>
+          }
+
       </div>
 
       <div className="menu">
@@ -31,6 +140,18 @@ const Menu = ({
             <h2 className={activeCategory === 'all' ? "menu-list__item" : "menu-list__item inactive"}>show all</h2>
           </li>
         </ul>
+
+        {/* chord submenu */}
+        <div className={activeCategory === 'key' ? "submenu" : "submenu inactive"}>
+          <h2 
+            className={type === 'major' ? "submenu__item" : "submenu__item inactive"}
+            onClick={() => onToggleSubMenu('major')}
+          >major</h2>
+          <h2 
+            className={type === 'minor' ? "submenu__item" : "submenu__item inactive"}
+            onClick={() => onToggleSubMenu('minor')}
+          >minor</h2>
+        </div>
 
         {/* key list */}
         <div className={activeCategory === 'key' ? "key-list" : "key-list inactive"}>
@@ -85,13 +206,13 @@ const Menu = ({
         </div>
 
         {/* chord submenu */}
-        <div className={activeCategory === 'chord' ? "chord-submenu" : "chord-submenu inactive"}>
+        <div className={activeCategory === 'chord' ? "submenu" : "submenu inactive"}>
           <h2 
-            className={chordType === 'major' ? "chord-submenu__item" : "chord-submenu__item inactive"}
+            className={type === 'major' ? "submenu__item" : "submenu__item inactive"}
             onClick={() => onToggleSubMenu('major')}
           >major</h2>
           <h2 
-            className={chordType === 'minor' ? "chord-submenu__item" : "chord-submenu__item inactive"}
+            className={type === 'minor' ? "submenu__item" : "submenu__item inactive"}
             onClick={() => onToggleSubMenu('minor')}
           >minor</h2>
         </div>

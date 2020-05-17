@@ -1,18 +1,37 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 6rem 4rem;
+  padding: 5rem 4rem;
 }
 
-.title {
-  &__text {
-    font-weight: 400;
-    font-size: 3.6rem;
 
-    & > span {
-      color: $color-pink;
-    }
+.title {
+  font-weight: 400;
+  font-size: 3.6rem;
+  margin-bottom: 1.2rem;
+
+  & > span {
+    color: $color-pink;
   }
+}
+
+.display {
+  // text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  font-size: 2.1rem;
+  margin-bottom: 1.2rem;
+
+  & > span {
+    text-transform: uppercase;
+  }
+}
+
+.notes-display {
+  // text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  font-size: 1.6rem;
 }
 
 .menu {
@@ -43,7 +62,7 @@
   }
 
   .key-list {
-    margin-right: 12rem;
+    margin-right: 8rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     height: 100%;
@@ -66,7 +85,7 @@
     }
   }
 
-  .chord-submenu {
+  .submenu {
     display: flex;
     margin-right: 8rem;
     flex-direction: column;

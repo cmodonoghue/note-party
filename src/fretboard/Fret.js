@@ -4,8 +4,13 @@ import Note from "./Note";
 
 const Fret = (props) => {
   let currentFret = props.position;
+  let openString = false;
+  if (currentFret === 'open') {
+    openString = true;
+  } 
 
   const fretNotes = {
+    'open': ['E', 'B', 'G', 'D', 'A', 'E'],
     1: ['F', 'C', 'Ab', 'Eb', 'Bb', 'F'],
     2: ['Gb', 'Db', 'A', 'E', 'B', 'Gb'],
     3: ['G', 'D', 'Bb', 'F', 'C', 'G'],
@@ -20,18 +25,23 @@ const Fret = (props) => {
     12: ['E', 'B', 'G', 'D', 'A', 'E'],
   }
 
-  console.log(fretNotes);
-  console.log(currentFret);
   let currentFretNotes = fretNotes[currentFret];
 
   return (
-    <div className="fret">
+    <div className={openString === true ? "fret fret--open" : "fret"}>
       {currentFretNotes.map(note => {
         console.log(note);
         return (
-          <Note letter={note} />
+          <Note letter={note} open={openString}/>
         )
       })}
+      {/* {(currentFret === 3 || 
+        currentFret === 5 ||
+        currentFret === 5 ||
+        currentFret === 7 ||
+        currentFret === 9 ||
+        currentFret === 12) && 
+        <h2 className="fret__label">{currentFret}</h2>} */}
     </div>
   )
 }

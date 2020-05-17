@@ -1,4 +1,19 @@
 .fretboard {
-  margin: 0 4rem;
+  margin: 0 3rem;
+}
+
+.frets {
   display: flex;
+}
+
+.fret-labels {
+  display: flex;
+  margin-top: 3rem;
+}
+
+.stealth-fret {
+  width: 10rem;
+  text-align: center;
+  color: $color-menu;
+  font-size: 2.1rem;
 }
