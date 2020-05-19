@@ -141,7 +141,11 @@ const Menu = ({
           </li>
         </ul>
 
-        {/* chord submenu */}
+        <h2 className={activeCategory === 'all' ? "mobile-msg" : "mobile-msg inactive"}>
+          showing all notes
+        </h2>
+
+        {/* key submenu */}
         <div className={activeCategory === 'key' ? "submenu" : "submenu inactive"}>
           <h2 
             className={type === 'major' ? "submenu__item" : "submenu__item inactive"}
@@ -154,53 +158,53 @@ const Menu = ({
         </div>
 
         {/* key list */}
-        <div className={activeCategory === 'key' ? "key-list" : "key-list inactive"}>
+        <div className={activeCategory === 'key' ? "letter-list" : "letter-list inactive"}>
           <h3 
-            className={activeKey === 'Ab' ? "key-letter" : "key-letter inactive"} 
+            className={activeKey === 'Ab' ? "letter" : "letter inactive"} 
             onClick={() => onSelectKey('Ab')}
           >Ab</h3>
           <h3 
-            className={activeKey === 'A' ? "key-letter" : "key-letter inactive"} 
+            className={activeKey === 'A' ? "letter" : "letter inactive"} 
             onClick={() => onSelectKey('A')}
           >A</h3>
           <h3 
-            className={activeKey === 'Bb' ? "key-letter" : "key-letter inactive"} 
+            className={activeKey === 'Bb' ? "letter" : "letter inactive"} 
             onClick={() => onSelectKey('Bb')}
           >Bb</h3>
           <h3 
-            className={activeKey === 'B' ? "key-letter" : "key-letter inactive"} 
+            className={activeKey === 'B' ? "letter" : "letter inactive"} 
             onClick={() => onSelectKey('B')}
           >B</h3>
           <h3 
-            className={activeKey === 'C' ? "key-letter" : "key-letter inactive"} 
+            className={activeKey === 'C' ? "letter" : "letter inactive"} 
             onClick={() => onSelectKey('C')}
           >C</h3>
           <h3 
-            className={activeKey === 'Db' ? "key-letter" : "key-letter inactive"} 
+            className={activeKey === 'Db' ? "letter" : "letter inactive"} 
             onClick={() => onSelectKey('Db')}
           >Db</h3>
           <h3 
-            className={activeKey === 'D' ? "key-letter" : "key-letter inactive"} 
+            className={activeKey === 'D' ? "letter" : "letter inactive"} 
             onClick={() => onSelectKey('D')}
           >D</h3>
           <h3 
-            className={activeKey === 'Eb' ? "key-letter" : "key-letter inactive"} 
+            className={activeKey === 'Eb' ? "letter" : "letter inactive"} 
             onClick={() => onSelectKey('Eb')}
           >Eb</h3>
           <h3 
-            className={activeKey === 'E' ? "key-letter" : "key-letter inactive"} 
+            className={activeKey === 'E' ? "letter" : "letter inactive"} 
             onClick={() => onSelectKey('E')}
           >E</h3>
           <h3 
-            className={activeKey === 'F' ? "key-letter" : "key-letter inactive"} 
+            className={activeKey === 'F' ? "letter" : "letter inactive"} 
             onClick={() => onSelectKey('F')}
           >F</h3>
           <h3 
-            className={activeKey === 'Gb' ? "key-letter" : "key-letter inactive"} 
+            className={activeKey === 'Gb' ? "letter" : "letter inactive"} 
             onClick={() => onSelectKey('Gb')}
           >Gb</h3>
           <h3 
-            className={activeKey === 'G' ? "key-letter" : "key-letter inactive"} 
+            className={activeKey === 'G' ? "letter" : "letter inactive"} 
             onClick={() => onSelectKey('G')}
           >G</h3>
         </div>
@@ -218,53 +222,53 @@ const Menu = ({
         </div>
 
         {/* chord list */}
-        <div className={activeCategory === 'chord' ? "chord-list" : "chord-list inactive"}>
+        <div className={activeCategory === 'chord' ? "letter-list" : "letter-list inactive"}>
           <h3 
-            className={activeChord === 'Ab' ? "chord-letter" : "chord-letter inactive"} 
+            className={activeChord === 'Ab' ? "letter" : "letter inactive"} 
             onClick={() => onSelectChord('Ab')}
           >Ab</h3>
           <h3 
-            className={activeChord === 'A' ? "chord-letter" : "chord-letter inactive"} 
+            className={activeChord === 'A' ? "letter" : "letter inactive"} 
             onClick={() => onSelectChord('A')}
           >A</h3>
           <h3 
-            className={activeChord === 'Bb' ? "chord-letter" : "chord-letter inactive"} 
+            className={activeChord === 'Bb' ? "letter" : "letter inactive"} 
             onClick={() => onSelectChord('Bb')}
           >Bb</h3>
           <h3 
-            className={activeChord === 'B' ? "chord-letter" : "chord-letter inactive"} 
+            className={activeChord === 'B' ? "letter" : "letter inactive"} 
             onClick={() => onSelectChord('B')}
           >B</h3>
           <h3 
-            className={activeChord === 'C' ? "chord-letter" : "chord-letter inactive"} 
+            className={activeChord === 'C' ? "letter" : "letter inactive"} 
             onClick={() => onSelectChord('C')}
           >C</h3>
           <h3 
-            className={activeChord === 'Db' ? "chord-letter" : "chord-letter inactive"} 
+            className={activeChord === 'Db' ? "letter" : "letter inactive"} 
             onClick={() => onSelectChord('Db')}
           >Db</h3>
           <h3 
-            className={activeChord === 'D' ? "chord-letter" : "chord-letter inactive"} 
+            className={activeChord === 'D' ? "letter" : "letter inactive"} 
             onClick={() => onSelectChord('D')}
           >D</h3>
           <h3 
-            className={activeChord === 'Eb' ? "chord-letter" : "chord-letter inactive"} 
+            className={activeChord === 'Eb' ? "letter" : "letter inactive"} 
             onClick={() => onSelectChord('Eb')}
           >Eb</h3>
           <h3 
-            className={activeChord === 'E' ? "chord-letter" : "chord-letter inactive"} 
+            className={activeChord === 'E' ? "letter" : "letter inactive"} 
             onClick={() => onSelectChord('E')}
           >E</h3>
           <h3 
-            className={activeChord === 'F' ? "chord-letter" : "chord-letter inactive"} 
+            className={activeChord === 'F' ? "letter" : "letter inactive"} 
             onClick={() => onSelectChord('F')}
           >F</h3>
           <h3 
-            className={activeChord === 'Gb' ? "chord-letter" : "chord-letter inactive"} 
+            className={activeChord === 'Gb' ? "letter" : "letter inactive"} 
             onClick={() => onSelectChord('Gb')}
           >Gb</h3>
           <h3 
-            className={activeChord === 'G' ? "chord-letter" : "chord-letter inactive"} 
+            className={activeChord === 'G' ? "letter" : "letter inactive"} 
             onClick={() => onSelectChord('G')}
           >G</h3>
         </div>

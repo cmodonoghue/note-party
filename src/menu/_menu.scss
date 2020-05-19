@@ -4,6 +4,18 @@
   padding: 5rem 4rem;
 }
 
+@media only screen and (max-width: 600px) {
+  .header {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .header {
+    justify-content: space-evenly;
+  }
+}
+
 
 .title {
   font-weight: 400;
@@ -16,7 +28,6 @@
 }
 
 .display {
-  // text-align: center;
   font-weight: 400;
   letter-spacing: 0.1rem;
   font-size: 2.1rem;
@@ -28,7 +39,6 @@
 }
 
 .notes-display {
-  // text-align: center;
   font-weight: 400;
   letter-spacing: 0.1rem;
   font-size: 1.6rem;
@@ -61,30 +71,6 @@
     }
   }
 
-  .key-list {
-    margin-right: 8rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    height: 100%;
-    width: 36rem;
-
-    &.inactive {
-      display: none;
-    }
-
-    .key-letter {
-      color: $color-menu;
-      font-weight: 400;
-      font-size: 2.4rem;
-      text-align: center;
-      cursor: pointer;
-
-      &.inactive {
-        color: $color-menu-light;
-      }
-    }
-  }
-
   .submenu {
     display: flex;
     margin-right: 8rem;
@@ -108,7 +94,7 @@
     }
   }
 
-  .chord-list {
+  .letter-list {
     margin-right: 8rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -119,7 +105,7 @@
       display: none;
     }
 
-    .chord-letter {
+    .letter {
       color: $color-menu;
       font-weight: 400;
       font-size: 2.4rem;
@@ -130,5 +116,65 @@
         color: $color-menu-light;
       }
     }
+  }
+}
+
+.mobile-msg, .mobile-msg.inactive {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    padding: 5rem 0; 
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .display {
+    text-align: center;
+  }
+
+  .notes-display {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+
+    &-list {
+      flex-direction: row;
+      justify-content: space-between;
+      
+      &__item {
+        text-align: center;
+      }
+    }
+
+    .submenu {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 60%;
+      margin: 2rem 0;
+    }
+
+    .letter-list {
+      margin: 0;
+      width: 80vw;
+      height: 12rem;
+    }
+  }
+
+  .mobile-msg {
+    display: block;
+    margin: auto;
+    margin-top: 8rem;
+    color: $color-black;
+    font-weight: 400;
+    font-size: 1.8rem;
   }
 }

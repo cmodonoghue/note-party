@@ -30,18 +30,10 @@ const Fret = (props) => {
   return (
     <div className={openString === true ? "fret fret--open" : "fret"}>
       {currentFretNotes.map(note => {
-        console.log(note);
         return (
           <Note letter={note} open={openString}/>
         )
       })}
-      {/* {(currentFret === 3 || 
-        currentFret === 5 ||
-        currentFret === 5 ||
-        currentFret === 7 ||
-        currentFret === 9 ||
-        currentFret === 12) && 
-        <h2 className="fret__label">{currentFret}</h2>} */}
     </div>
   )
 }

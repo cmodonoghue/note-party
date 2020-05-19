@@ -142,7 +142,7 @@ const Note = (props) => {
   if (category === "chord") {
     if (currentLetter) {
       if (accidental) {
-        // if the active key is one that uses sharps instead of flats, then convert the current flat note
+        // if the active chord is one that uses sharps instead of flats, then convert the current flat note
         if (type === 'major') {
           if (sharpChordsMajor.includes(currentLetter)) {
             noteLetter = convertAccidental(noteLetter);

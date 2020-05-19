@@ -33,6 +33,14 @@ li {
   list-style: none;
 } 
 
+@media only screen and (max-width: 600px) {
+  .note-party {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 $color-black: #3D3D3D;
 
 $color-gray: #C5CFD8;

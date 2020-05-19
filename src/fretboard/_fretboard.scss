@@ -1,13 +1,22 @@
 .fretboard {
-  margin: 0 3rem;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .fretboard {
+    width: 90vw;
+    margin: 10rem 0;
+  }
 }
 
 .frets {
   display: flex;
+  justify-content: center;
 }
 
 .fret-labels {
   display: flex;
+  justify-content: center;
   margin-top: 3rem;
 }
 

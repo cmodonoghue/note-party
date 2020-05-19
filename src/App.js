@@ -45,7 +45,7 @@ const App = () => {
     <CategoryContext.Provider value={activeCategory}>
       <LetterContext.Provider value={currentLetter}>
         <TypeContext.Provider value={type}> 
-          <div>
+          <div className="note-party">
             <Menu 
               onToggleMenu={toggleMenu} 
               onToggleSubMenu={toggleSubMenu} 
